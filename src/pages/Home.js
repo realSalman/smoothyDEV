@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDarkMode } from '../contexts/DarkModeContext';
+
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentProject, setCurrentProject] = useState(0);
-  const { darkMode } = useDarkMode();
+
 
   const testimonials = [
     {
@@ -249,9 +249,9 @@ const Home = () => {
           </h2>
           <p className="font-poppins text-lg text-center mb-5 text-gray-400 text-xs">(like these great companies have)</p>
           <div>
-            <ul role="list" className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(120px,1fr))] place-items-center">
+            <ul className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(120px,1fr))] place-items-center">
               {clientLogos.map((logo, index) => (
-                <li key={index} role="listitem" className="py-3 px-6">
+                <li key={index} className="py-3 px-6">
                   <img
                     src={`/assets/${logo}`}
                     loading="lazy"
