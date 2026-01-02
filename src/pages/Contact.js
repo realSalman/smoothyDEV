@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [message, setMessage] = useState('');
@@ -15,7 +16,14 @@ const Contact = () => {
 
   return (
     <div className="contact-page animate-fadeIn">
-      <section id="contact-form" className="pt-6 pb-25 sm:px-5 sm:pb-10 sm:pt-0">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        id="contact-form"
+        className="pt-6 pb-25 sm:px-5 sm:pb-10 sm:pt-0"
+      >
         <div className="block max-w-[800px] mx-auto px-5">
           <div className="mb-2">
             <form
@@ -68,7 +76,7 @@ const Contact = () => {
           </div>
           <p className="text-center text-xs font-light leading-[1.2] block font-poppins mt-3.5 text-gray-600 dark:text-gray-400">(Get instant response)</p>
         </div>
-      </section>
+      </motion.section>
       <style>{`
         @keyframes whatsapp-pulse {
           0%, 100% {

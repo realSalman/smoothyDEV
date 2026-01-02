@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Portfolio = () => {
   const projects = [
@@ -41,17 +42,29 @@ const Portfolio = () => {
   return (
     <div className="portfolio-page animate-fadeIn min-h-screen">
       {/* Header Section */}
-      <div className="text-center mt-8 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center mt-8 px-4"
+      >
         <img
           src="/assets/arrow.png"
           loading="lazy"
           alt=""
           className="w-[280px] max-w-[90%] mx-auto opacity-80 dark:opacity-60 transition-opacity duration-300"
         />
-      </div>
+      </motion.div>
 
       {/* Portfolio Grid Section */}
-      <section className="py-12 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+      <motion.section
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="py-12 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto"
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
@@ -179,7 +192,7 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

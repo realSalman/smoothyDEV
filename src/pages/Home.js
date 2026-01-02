@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const Home = () => {
@@ -67,17 +68,17 @@ const Home = () => {
   return (
     <div className="home-page animate-fadeIn">
       {/* Hero Title Section */}
-      <section className="h-[80vh] mb-0">
+      <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-[80vh] mb-0">
         <div className="flex justify-center items-center h-4/5">
           <h1 className="text-black dark:text-white self-center mr-8 text-center font-poppins text-5xl md:text-6xl font-normal leading-[6.5rem] md:mr-0 md:text-5xl md:leading-[4rem]">
             <strong>Better</strong> WebAPP,<br />
             Built <em>Faster</em>.
           </h1>
         </div>
-      </section>
+      </motion.section>
 
       {/* Hero Section */}
-      <section id="feature-section" className="mb-20 pt-0 pb-10 md:px-5">
+      <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} id="feature-section" className="mb-20 pt-0 pb-10 md:px-5">
         <div className="flex flex-row gap-6 flex-1 justify-between items-stretch max-w-[80%] h-[500px] max-h-[70%] mx-auto overflow-visible md:flex-col md:justify-center md:items-center md:h-auto">
           <div className="gap-6 text-left flex-col flex-0 justify-center items-start flex">
             <h2 className="text-black dark:text-white mb-0 font-poppins text-2xl md:text-2xl font-medium leading-[3rem] md:text-center">
@@ -92,10 +93,10 @@ const Home = () => {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Why Choose Us Section */}
-      <section className="mt-15">
+      <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="mt-15">
         <h2 className="text-center mt-25 mb-10 font-poppins text-black dark:text-white">
           <strong>Why work with smoothyDEV?</strong>
         </h2>
@@ -243,7 +244,7 @@ const Home = () => {
         </div>
 
         {/* Clients Section */}
-        <section className="text-left mt-9 mb-[150px] pl-[5%] pr-[5%]">
+        <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="text-left mt-9 mb-[150px] pl-[5%] pr-[5%]">
           <h2 className="text-center mt-25 mb-2.5 font-poppins text-black dark:text-white">
             <strong>Build WebAPP with smoothyDEV</strong>
           </h2>
@@ -263,10 +264,10 @@ const Home = () => {
             </ul>
           </div>
           <p className="text-center mt-6 font-poppins text-xs font-normal text-gray-400">... and many more!</p>
-        </section>
+        </motion.section>
 
         {/* Portfolio Preview Section */}
-        <section className="mb-40 text-center px-4">
+        <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="mb-40 text-center px-4">
           <h2 className="text-center mb-8 font-poppins text-black dark:text-white text-md">
             <strong>Check Out Our Recent Work:</strong>
           </h2>
@@ -345,10 +346,10 @@ const Home = () => {
               </svg>
             </div>
           </Link>
-        </section>
+        </motion.section>
 
         {/* Testimonials Section */}
-        <section className="mt-30 mb-10">
+        <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="mt-30 mb-10">
           <h2 className="text-center pl-0 pr-0 font-poppins text-2xl md:text-xl font-normal text-black dark:text-white">
             <strong className="text-left font-poppins text-sm">Just ask our clients.</strong>
           </h2>
@@ -377,9 +378,9 @@ const Home = () => {
               </blockquote>
             </div>
           </div>
-        </section>
+        </motion.section>
         <div className="h-20"></div>
-      </section>
+      </motion.section>
     </div>
   );
 };

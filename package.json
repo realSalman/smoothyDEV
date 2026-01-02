@@ -4,6 +4,7 @@
   "description": "smoothyDEV website built with React",
   "private": true,
   "dependencies": {
+    "framer-motion": "^12.23.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.20.0",
