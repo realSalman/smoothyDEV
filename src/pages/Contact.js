@@ -22,7 +22,7 @@ const Contact = () => {
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         id="contact-form"
-        className="pt-6 pb-25 sm:px-5 sm:pb-10 sm:pt-0"
+        className="pt-32 pb-25 sm:px-5 sm:pb-10 sm:pt-24"
       >
         <div className="block max-w-[800px] mx-auto px-5">
           <div className="mb-2">

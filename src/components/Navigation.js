@@ -19,50 +19,50 @@ const Navigation = () => {
   const isHomeActive = isActive('/home') || location.pathname === '/';
 
   return (
-    <div className="relative z-[1000]">
+    <div className="fixed top-4 left-0 right-0 z-[1000] flex justify-center pointer-events-none px-4">
       <header
         role="banner"
-        className="bg-transparent h-[120px] relative"
+        className="pointer-events-auto bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 shadow-xl rounded-2xl h-[70px] w-full max-w-6xl relative transition-all duration-300"
       >
-        <div className="text-white flex justify-between lg:justify-start items-center w-[92%] max-w-[92%] h-full mx-auto">
+        <div className="text-white flex justify-between lg:justify-start items-center w-full h-full px-6">
           <Link
             to="/home"
-            className="block w-[200px] max-w-[80%] h-10 my-auto bg-no-repeat bg-contain transition-all"
+            className="block w-[160px] max-w-[40%] h-8 my-auto bg-no-repeat bg-contain transition-all"
             style={{
               backgroundImage: isHomeActive
                 ? 'url(/assets/main-logo.png)'
                 : darkMode
                   ? 'url(/assets/logo_white.png)'
                   : 'url(/assets/logo_black.png)',
-              backgroundPosition: isHomeActive ? 'left' : 'center'
+              backgroundPosition: 'left'
             }}
           >
           </Link>
           <nav
             role="navigation"
             className={`${isMenuOpen
-                ? 'flex flex-col items-center justify-center absolute top-full left-0 right-0 bg-white dark:bg-gray-800 shadow-lg py-5 px-5 z-50 animate-slideDown'
-                : 'hidden lg:flex text-right flex-1 items-center justify-end'
+              ? 'flex flex-col items-center justify-center absolute top-[calc(100%+10px)] left-0 right-0 bg-white dark:bg-gray-800 shadow-xl rounded-2xl py-5 px-5 z-50 animate-slideDown border border-gray-100 dark:border-gray-700'
+              : 'hidden lg:flex text-right flex-1 items-center justify-end'
               }`}
           >
             <Link
               to="/portfolio"
-              className={`text-black dark:text-white font-poppins text-md font-light no-underline py-2.5 inline-block transition-colors hover:text-primary dark:hover:text-primary ${isActive('/portfolio') ? 'text-primary dark:text-primary' : ''
-                } lg:ml-5 lg:my-0 my-2.5 py-3.5 lg:py-2.5 block lg:inline-block border-b lg:border-b-0 border-gray-200 dark:border-gray-700 ${isMenuOpen ? 'mx-auto text-center' : 'ml-5'}`}
+              className={`text-black dark:text-white font-poppins text-sm font-medium no-underline py-2 inline-block transition-colors hover:text-primary dark:hover:text-primary ${isActive('/portfolio') ? 'text-primary dark:text-primary' : ''
+                } lg:ml-8 lg:my-0 my-2.5 py-3.5 lg:py-2 block lg:inline-block border-b lg:border-b-0 border-gray-200 dark:border-gray-700 ${isMenuOpen ? 'mx-auto text-center' : 'ml-8'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               PROJECTS
             </Link>
             <Link
               to="/contact"
-              className={`text-black dark:text-white font-poppins text-md font-light no-underline py-2.5 inline-block transition-colors hover:text-primary dark:hover:text-primary ${isActive('/contact') ? 'text-primary dark:text-primary' : ''
-                } lg:ml-5 lg:my-0 my-2.5 py-3.5 lg:py-2.5 block lg:inline-block border-b lg:border-b-0 border-gray-200 dark:border-gray-700 ${isMenuOpen ? 'mx-auto text-center' : 'ml-5'}`}
+              className={`text-black dark:text-white font-poppins text-sm font-medium no-underline py-2 inline-block transition-colors hover:text-primary dark:hover:text-primary ${isActive('/contact') ? 'text-primary dark:text-primary' : ''
+                } lg:ml-8 lg:my-0 my-2.5 py-3.5 lg:py-2 block lg:inline-block border-b lg:border-b-0 border-gray-200 dark:border-gray-700 ${isMenuOpen ? 'mx-auto text-center' : 'ml-8'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               CONTACT
             </Link>
             {/* Dark Mode Toggle */}
-            <label className={`switch ${isMenuOpen ? 'mx-auto mt-2' : 'ml-4'}`} aria-label="Toggle dark mode">
+            <label className={`switch ${isMenuOpen ? 'mx-auto mt-4' : 'ml-8'}`} aria-label="Toggle dark mode">
               <input
                 checked={!darkMode}
                 id="checkbox"
@@ -86,7 +86,7 @@ const Navigation = () => {
 
           <button
             type="button"
-            className="lg:hidden bg-transparent border-none cursor-pointer p-[18px] text-2xl transition-transform duration-300 hover:scale-110 active:scale-95"
+            className="lg:hidden bg-transparent border-none cursor-pointer p-2 text-2xl transition-transform duration-300 hover:scale-110 active:scale-95"
             aria-label="Toggle menu"
             onClick={toggleMenu}
           >

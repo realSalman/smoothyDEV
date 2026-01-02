@@ -68,7 +68,7 @@ const Home = () => {
   return (
     <div className="home-page animate-fadeIn">
       {/* Hero Title Section */}
-      <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-[80vh] mb-0">
+      <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-[80vh] mb-0 pt-28">
         <div className="flex justify-center items-center h-4/5">
           <h1 className="text-black dark:text-white self-center mr-8 text-center font-poppins text-5xl md:text-6xl font-normal leading-[6.5rem] md:mr-0 md:text-5xl md:leading-[4rem]">
             <strong>Better</strong> <span className="shiny-text">WebAPP</span>,<br />
