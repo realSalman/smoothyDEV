@@ -71,7 +71,7 @@ const Home = () => {
       <motion.section initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.8, ease: "easeOut" }} className="h-[80vh] mb-0">
         <div className="flex justify-center items-center h-4/5">
           <h1 className="text-black dark:text-white self-center mr-8 text-center font-poppins text-5xl md:text-6xl font-normal leading-[6.5rem] md:mr-0 md:text-5xl md:leading-[4rem]">
-            <strong>Better</strong> WebAPP,<br />
+            <strong>Better</strong> <span className="shiny-text">WebAPP</span>,<br />
             Built <em>Faster</em>.
           </h1>
         </div>
@@ -381,6 +381,42 @@ const Home = () => {
         </motion.section>
         <div className="h-20"></div>
       </motion.section>
+      <style>{`
+        .shiny-text {
+          background: linear-gradient(
+            110deg,
+            #000000 30%,
+            #9CA3AF 50%,
+            #000000 70%
+          );
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          -webkit-text-fill-color: transparent;
+          animation: shine 2s linear infinite;
+        }
+        
+        @keyframes shine {
+          to {
+            background-position: 200% center;
+          }
+        }
+
+        .dark .shiny-text {
+          background: linear-gradient(
+            110deg,
+            #FFFFFF 30%,
+            #6B7280 50%,
+            #FFFFFF 70%
+          );
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          -webkit-text-fill-color: transparent;
+        }
+      `}</style>
     </div>
   );
 };
